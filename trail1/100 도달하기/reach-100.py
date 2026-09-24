@@ -1,13 +1,10 @@
 N = int(input())
-new_arr = [1, N]
-arr = [0, 1, N]
-for i in range(3, 20):
-    a = arr[i - 1] + arr[i - 2]
-    arr.append(a)
-    new_arr.append(a)
-for elem in new_arr:
-    if elem > 100:
-        print(elem, end=' ')
+arr = [1, N]
+cnt = 1
+while True:
+    cnt += 1
+    arr.append(arr[cnt - 1] + arr[cnt - 2])
+    if arr[cnt] > 100:
         break
-    else:
-        print(elem, end=' ')
+for elem in arr:
+    print(elem, end=' ')
